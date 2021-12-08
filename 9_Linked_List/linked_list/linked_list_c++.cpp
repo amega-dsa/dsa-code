@@ -37,6 +37,10 @@ linked_list *linked_list::deletion(int value)
  {
   curr = curr->next;
  }
+ if (curr->next == NULL)
+ {
+  cout << value << " was not found" << endl;
+ }
  if (curr->next != NULL)
  {
   curr->next = curr->next->next; // deleting the node

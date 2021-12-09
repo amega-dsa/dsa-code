@@ -4,17 +4,19 @@
 using namespace std;
 class Node //Declaring a Node Structure
 {
+    public:
     int data;
-    struct Node *left;
-    struct Node *right;
-    public Node(int x)
+    Node *left;
+    Node *right;
+    public :
+    Node(int x)
     {
         data = x;
         left = NULL;
         right = NULL;
     }
 };
-void preorder(struct Node *root) // Recursive Preorder Traversal
+void preorder(Node *root) // Recursive Preorder Traversal
 {
     if (!root)
         return;
@@ -22,7 +24,7 @@ void preorder(struct Node *root) // Recursive Preorder Traversal
     preorder(root->left); // Step 2: Moving on to the left subtree of root 
     preorder(root->right); // Step 3: Moving on to the right subtree of root 
 }
-void inorder(struct Node *root) // Recursive Inorder Traversal
+void inorder(Node *root) // Recursive Inorder Traversal
 {
     if (!root)
         return;
@@ -63,4 +65,31 @@ void levelOrder(Node *root) // Recursive Level Order Traversal
         else if (!q.empty())
             q.push(NULL);
     }
+}
+int32_t main()
+{
+    Node *root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    root->right->left = new Node(6);
+    root->right->right = new Node(7);
+
+    //preorder traversal
+    preorder(root);
+    cout << endl;
+
+    //inorder traversal
+    inorder(root);
+    cout << endl;
+
+    //postorder traversal
+    postorder(root);
+    cout << endl;
+
+    //levelOrder traversal
+    levelOrder(root);
+    cout << endl;
 }

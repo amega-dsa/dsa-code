@@ -2,12 +2,12 @@
 //Author: Satyam Shukla
 #include <bits/stdc++.h>
 using namespace std;
-struct Node //Declaring a Node Structure
+class Node //Declaring a Node Structure
 {
     int data;
     struct Node *left;
     struct Node *right;
-    Node(int x)
+    public Node(int x)
     {
         data = x;
         left = NULL;

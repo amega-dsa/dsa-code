@@ -1,3 +1,6 @@
+/*
+    Author: - Satyam Shukla
+*/
 #include <bits/stdc++.h>
 using namespace std;
 //Gcd Algorithms 
